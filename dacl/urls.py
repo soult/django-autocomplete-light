@@ -1,10 +1,8 @@
 from django.conf.urls import patterns, include, url
-from django.contrib import admin
 
-urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'dacl.views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
+import example.urls
 
-    url(r'^admin/', include(admin.site.urls)),
+urlpatterns = patterns("",
+    url(r"^autocomplete/", include("autocomplete_light.urls")),
+    url(r"^$", include("example.urls")),
 )

@@ -1,0 +1,29 @@
+{% load bootstrap3 %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Bootstrap3 + Autocomplete Light: Required attribute example</title>
+        {% bootstrap_css %}
+        {% bootstrap_javascript jquery=True %}
+        <script type="text/javascript">$.fn.bootstrapBtn = $.fn.button.noConflict();</script>
+        {% include "autocomplete_light/static.html" %}
+        {{ form.media }}
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <form>
+                        {% bootstrap_form form %}
+                        {% buttons %}
+                            {% bootstrap_button "Submit" button_type="submit" icon="save" %}
+                        {% endbuttons %}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
